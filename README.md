@@ -2,9 +2,7 @@
 
 Projeto simples em HTML, CSS e JavaScript para cálculo do IMC (Índice de Massa Corporal). Este projeto foi desenvolvido como meu primeiro trabalho da faculdade, com o objetivo de aplicar os primeiros conceitos de programação e desenvolvimento web.
 
-## 🎯 Objetivo
-
-O objetivo deste projeto é:
+## Especificações Técnicas
 - Criar uma interface web básica para entrada de dados (peso e altura)
 - Realizar o cálculo do IMC com base nos valores inseridos
 - Exibir o resultado de forma dinâmica e amigável
