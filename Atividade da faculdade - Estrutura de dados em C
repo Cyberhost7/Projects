@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define NUM_DIAS 7
+
+int main() {
+    int carrosPorDia[NUM_DIAS];
+    char* diasDaSemana[NUM_DIAS] = {"Domingo", "Segunda-feira", "Terca-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"};
+    int maiorFluxo = 0;
+    int diaDePicoIndex = 0;
+    int i;
+
+    system("cls || clear");
+
+    printf("========================================\n");
+    printf("    Bem-vindo ao PedagioIntel v1.0\n");
+    printf("  Sistema de Controle de Fluxo Semanal\n");
+    printf("========================================\n\n");
+
+    printf("Por favor, insira os dados da semana:\n");
+
+    for (i = 0; i < NUM_DIAS; i++) {
+        printf("Digite o numero de carros para %s: ", diasDaSemana[i]);
+
+        while (scanf("%d", &carrosPorDia[i]) != 1) {
+            printf("Entrada invalida! Por favor, digite apenas numeros: ");
+            while (getchar() != '\n');
+        }
+    }
+    printf("\n--- Dados registrados com sucesso! ---\n\n");
+
+    maiorFluxo = carrosPorDia[0];
+    diaDePicoIndex = 0;
+
+    for (i = 1; i < NUM_DIAS; i++) {
+        if (carrosPorDia[i] > maiorFluxo) {
+            maiorFluxo = carrosPorDia[i];
+            diaDePicoIndex = i;
+        }
+    }
+
+    printf("========================================\n");
+    printf("       RELATORIO DE FLUXO SEMANAL\n");
+    printf("========================================\n");
+
+    for (i = 0; i < NUM_DIAS; i++) {
+        printf("%-13s: %d carros", diasDaSemana[i], carrosPorDia[i]);
+
+        if (i == diaDePicoIndex) {
+            printf("  <-- DIA DE PICO!\n");
+        } else {
+            printf("\n");
+        }
+    }
+    printf("========================================\n\n");
+
+    printf("Pressione Enter para sair...");
+    getchar();
+    getchar();
+
+    return 0;
+}
